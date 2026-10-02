@@ -464,7 +464,7 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: #4a8df7; /* was var(--accent) #3b82f6 (4.29:1); now 4.84:1 on accent-dim over bg-card */
   background: var(--accent-dim);
   padding: 0.3rem 0.65rem;
   border-radius: 999px;
@@ -586,7 +586,7 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: #4a8df7; /* was var(--accent) #3b82f6 (4.29:1); now 4.84:1 on accent-dim over bg-card */
   background: var(--accent-dim);
   padding: 0.3rem 0.65rem;
   border-radius: 999px;
