@@ -1,4 +1,24 @@
 /* AZERATE — Day-1 landing styles */
+
+/* Self-hosted fonts (SIL Open Font License 1.1 — see /fonts/*-OFL.txt). Latin subset, variable weight. */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonts/inter-latin-wght.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url("fonts/instrument-sans-latin-wght.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
   --bg: #0a0a0b;
   --bg-elevated: #121214;
@@ -7,9 +27,11 @@
   --border-subtle: #1e1e22;
   --text: #f4f4f5;
   --text-muted: #a1a1aa;
-  --text-dim: #71717a;
+  --text-dim: #8e8e98; /* was #71717a; raised for >=4.5:1 contrast on all dark surfaces */
   --accent: #3b82f6;
   --accent-hover: #60a5fa;
+  --btn-primary: #2563eb; /* white text >=4.5:1 */
+  --btn-primary-hover: #1d4ed8;
   --accent-dim: rgba(59, 130, 246, 0.12);
   --accent-glow: rgba(59, 130, 246, 0.25);
   --success: #34d399;
@@ -202,13 +224,13 @@ h3 {
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: var(--btn-primary);
   color: #fff;
   box-shadow: 0 0 0 0 var(--accent-glow);
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
+  background: var(--btn-primary-hover);
   box-shadow: 0 0 24px var(--accent-glow);
 }
 
@@ -311,6 +333,8 @@ h3 {
 }
 
 .hero-card-label {
+  font-family: var(--font-sans);
+  line-height: 1.6;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -350,7 +374,9 @@ h3 {
   margin-top: 2px;
 }
 
-.flow-step h4 {
+.flow-step .flow-title {
+  font-family: var(--font-sans);
+  line-height: 1.6;
   font-size: 0.95rem;
   font-weight: 600;
   margin-bottom: 0.2rem;
@@ -617,9 +643,16 @@ h3 {
 
 .price-note {
   margin-top: 1.5rem;
+  margin-inline: auto;
+  max-width: 52em;
   font-size: 0.85rem;
   color: var(--text-dim);
   text-align: center;
+}
+
+.price-note-strong {
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
 /* Audience */
@@ -797,6 +830,12 @@ h3 {
 }
 
 /* Legal pages (terms, privacy) */
+.legal .faq-item h2 {
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.6rem;
+}
+
 .legal .faq-item p + p,
 .legal .faq-item ul {
   margin-top: 0.6rem;
