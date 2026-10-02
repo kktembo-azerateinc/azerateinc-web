@@ -795,3 +795,37 @@ h3 {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+/* Legal pages (terms, privacy) */
+.legal .faq-item p + p,
+.legal .faq-item ul {
+  margin-top: 0.6rem;
+}
+
+.legal .faq-item ul {
+  max-width: 42em;
+}
+
+.legal .faq-item li {
+  position: relative;
+  padding-left: 1.15rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.legal .faq-item li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.legal .faq-item a,
+.legal .section-header a {
+  color: var(--accent);
+}
+
+.legal .faq-item a:hover {
+  color: var(--accent-hover);
+}
